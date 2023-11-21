@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import math from "mathjs";
 import "./Calculator.css";
 
 const Calculator = () => {
@@ -26,10 +27,19 @@ const Calculator = () => {
     }
   };
 
+  //   const handleCalculate = () => {
+  //     try {
+  //       const calculatedResult = new Function("return " + input)(); //uses the Function constructor to evaluate the expression provided in the input
+  //       //could use `eval` but it's causing security issue on production
+  //       setResult(calculatedResult);
+  //     } catch (error) {
+  //       setResult("Error");
+  //     }
+  //   };
+
   const handleCalculate = () => {
     try {
-      const calculatedResult = new Function("return " + input)(); //uses the Function constructor to evaluate the expression provided in the input
-      //could use `eval` but it's causing security issue on production
+      const calculatedResult = math.evaluate(input);
       setResult(calculatedResult);
     } catch (error) {
       setResult("Error");
