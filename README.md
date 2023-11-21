@@ -29,5 +29,7 @@ If you aren't satisfied with the build tool and configuration choices, you can `
 ---
 
 Technologies: JavaScript, HTML, CSS & React.Js
+
 IDE: Visual Studio Code
+
 OS: Windows 11
