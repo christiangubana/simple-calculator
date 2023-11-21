@@ -45,6 +45,7 @@ const Calculator = () => {
               {number}
             </button>
           ))}
+          <button onClick={() => handleButtonClick(".")}>.</button>
         </div>
         <div className="calculate-button">
           <button onClick={handleCalculate}>=</button>

@@ -28,7 +28,6 @@
 .clear-button button {
   border: 1px solid #000;
   flex: 2;
-  margin: 1px;
 }
 
 .result-wrapper {
