@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import math from "mathjs";
+import * as math from "mathjs";
 import "./Calculator.css";
 
 const Calculator = () => {
@@ -39,7 +39,7 @@ const Calculator = () => {
 
   const handleCalculate = () => {
     try {
-      const calculatedResult = math.evaluate(input);
+      const calculatedResult = math.evaluate(input); //Replace the use of new Function with math.evaluate
       setResult(calculatedResult);
     } catch (error) {
       setResult("Error");
