@@ -7,8 +7,23 @@ const Calculator = () => {
   const [selectedOperator, setSelectedOperator] = useState("");
 
   const handleButtonClick = (value) => {
-    setInput((prevInput) => prevInput + value);
-    setSelectedOperator(value);
+    if (["+", "-", "*", "/"].includes(value)) {
+      // If the clicked button is an operator
+      const lastCharIsOperator = ["+", "-", "*", "/"].includes(input.slice(-1));
+
+      if (lastCharIsOperator) {
+        // If the last character is an operator, replace it with the new operator
+        setInput((prevInput) => prevInput.slice(0, -1) + value);
+        setSelectedOperator(value);
+      } else {
+        // If the last character is not an operator, append the new operator to input
+        setInput((prevInput) => prevInput + value);
+        setSelectedOperator(value);
+      }
+    } else {
+      // If the clicked button is a number, simply append it to the input
+      setInput((prevInput) => prevInput + value);
+    }
   };
 
   const handleCalculate = () => {
