@@ -4,9 +4,11 @@ import "./Calculator.css";
 const Calculator = () => {
   const [input, setInput] = useState("");
   const [result, setResult] = useState(0);
+  const [selectedOperator, setSelectedOperator] = useState("");
 
   const handleButtonClick = (value) => {
     setInput((prevInput) => prevInput + value);
+    setSelectedOperator(value);
   };
 
   const handleCalculate = () => {
@@ -32,7 +34,13 @@ const Calculator = () => {
         />
         <div className="operators">
           {["+", "-", "*", "/"].map((operator) => (
-            <button key={operator} onClick={() => handleButtonClick(operator)}>
+            <button
+              key={operator}
+              onClick={() => handleButtonClick(operator)}
+              className={
+                selectedOperator === operator ? "selected-operator" : "" //Add Animation on Selected Operator:
+              }
+            >
               {operator}
             </button>
           ))}
