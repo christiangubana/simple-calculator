@@ -28,7 +28,9 @@ const Calculator = () => {
 
   const handleCalculate = () => {
     try {
-      setResult(eval(input)); //Will refactor to avoid the use of eval due to security concerns
+      const calculatedResult = new Function("return " + input)(); //uses the Function constructor to evaluate the expression provided in the input
+      //could use `eval` but it's causing security issue on production
+      setResult(calculatedResult);
     } catch (error) {
       setResult("Error");
     }
