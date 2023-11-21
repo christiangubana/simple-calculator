@@ -3,7 +3,7 @@ import Calculator from "./components/Calculator";
 function App() {
   return (
     <div className="App">
-      <h1 className="header">Calculator</h1>
+      <h1 className="header">Huble - Calculator</h1>
       <Calculator />
     </div>
   );
