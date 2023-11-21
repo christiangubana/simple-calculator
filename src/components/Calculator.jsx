@@ -30,8 +30,6 @@ const Calculator = () => {
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
-      </div>
-      <div className="buttons-wrapper">
         <div className="operators">
           {["+", "-", "*", "/"].map((operator) => (
             <button key={operator} onClick={() => handleButtonClick(operator)}>
@@ -39,6 +37,8 @@ const Calculator = () => {
             </button>
           ))}
         </div>
+      </div>
+      <div className="buttons-wrapper">
         <div className="numbers">
           {[7, 8, 9, 4, 5, 6, 1, 2, 3, 0].map((number) => (
             <button key={number} onClick={() => handleButtonClick(number)}>
